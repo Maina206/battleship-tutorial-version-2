@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    line-height: 1.6; 
+    word-spacing: 0.2rem;
+}
+li {
+    line-height: 1.6;
+    word-spacing: 0.2rem;
+}
+.container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #1e90ff;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #1e90ff;
+    margin-top: 0;
+}
+
+h3 {
+    font-size: 1.4rem;
+    color: #1e90ff;
+    margin-top: 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+h5 {
+    margin-top: 0;
+    font-size: 1.0rem;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropdown-content a {
+    margin: 15px;
+    border: 1px solid #1e90ff;
+    border-radius: 100px;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #e8f4fd;
+}
+
+.game-image {
+    text-align: center;
+    width: 50%;
+    height: auto;
+    border-radius: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.horizontalLine {
+    border: none;              
+    height: 3px;               
+    background-color: rgb(130, 130, 209);    
+    width: 100%;                
+    margin: 30px auto;        
+    border-radius: 5px;
+}
+
+.step {
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #1e90ff;
+    border-radius: 5px;
+    background-color: #e8f4fd;
+    transition: box-shadow 0.3s;
+}
+
+.step:hover {
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.sub-step {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px dashed #1e90ff;
+    border-radius: 5px;
+    background-color: #f1f9ff;
+}
+
+.players {
+    display: flex;
+    padding: 10px;
+    margin: 15px;
+}
+
+#players {
+    display: flex;
+    padding: 10px;
+    margin: 15px;
+}
+
+#gameBoard {
+    margin-right: 50px;
+}
+
+#player1 {
+    margin-right: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(11, 40px);
+    grid-template-rows: repeat(11, 40px);
+    gap: 1px;
+  }
+
+.cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid black;
+    font-size: 14px;
+  }
+
+.label {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+
+#lostP1 {
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+#winP2 {
+    margin-bottom: 50px;
+}
+
+.players p {
+    /* border: 1px solid black; */
+    padding: 25px;
+    font-size: 0.9rem;
+}
+
+
+.simulateGame {
+    margin: 10px 10px;
+    background-color: #007BFF; 
+    color: white; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.simulateGame:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .dropdown {
+        width: 100%; 
+        font-size: 16px;
+    }
+}
+
+.small-button {
+    padding: 2px  5px;  /* Adjust padding for size */
+    font-size: 12px;    /* Smaller font size */
+    border: none;       /* Remove border */
+    background-color: #007BFF; /* Button color */
+    color: white;       /* Text color */
+    cursor: pointer;    /* Change cursor to pointer */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.small-button:hover {
+    background-color: #0056b3;
+}
