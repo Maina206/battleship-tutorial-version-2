@@ -1,10 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const BattleshipGrid = ({ gridId, ships }) => {
+const BattleshipGrid = ({ gridId }) => {
   const gridRef = useRef(null);
   const rows = 10;
   const cols = 10;
   const rowLabels = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
+
+  const [ships, setShips] = useState([
+    { name: "Aircraft Carrier", length: 5 },
+    { name: "Battleship", length: 4 },
+    { name: "Cruiser", length: 3 },
+    { name: "Submarine", length: 3 },
+    { name: "Destroyer", length: 2 },
+  ]);
 
   const createBattleshipGrid = (gridContainer) => {
     gridContainer.innerHTML = ""; // Clear existing content

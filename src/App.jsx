@@ -7,6 +7,7 @@ import HeaderComponent from "./Header/HeaderComponent";
 import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
 import Introduction from "./components/Introduction";
+import EndGame from "./components/EndGame";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Step2 />
       <ArrangingShips />
       <Step4 />
+      <EndGame />
       <FooterComponent />
     </>
   );
