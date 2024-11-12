@@ -4,24 +4,6 @@ import BattleshipPinGrid from "./BattleshipPinGrid";
 import "../assets/styles/arrangingships.css";
 
 const ArrangingShipsPage = () => {
-  const [ships, setShips] = useState([
-    { name: "Aircraft Carrier", length: 5 },
-    { name: "Battleship", length: 4 },
-    { name: "Cruiser", length: 3 },
-    { name: "Submarine", length: 3 },
-    { name: "Destroyer", length: 2 },
-  ]);
-
-  const [selectedShip, setSelectedShip] = useState(null);
-  const [shipOrientation, setShipOrientation] = useState("horizontal");
-
-  const handleShipPlacement = (coordinate) => {
-    if (selectedShip) {
-      placeShip("gameBoard", selectedShip, coordinate, shipOrientation);
-      setSelectedShip(null);
-    }
-  };
-
   return (
     <div id="step3" className="container">
       <h3>Step 3: Arrange your ships secretly</h3>
@@ -57,13 +39,7 @@ const ArrangingShipsPage = () => {
         <div className="players">
           <div>
             <h5>Player Battleship Board</h5>
-            <BattleshipGrid
-              gridId="gameBoard"
-              ships={ships}
-              selectedShip={selectedShip}
-              shipOrientation={shipOrientation}
-              onShipPlacement={handleShipPlacement}
-            />
+            <BattleshipGrid gridId="gameBoard" />
           </div>
           <div>
             <h5>Player Pins Board</h5>
