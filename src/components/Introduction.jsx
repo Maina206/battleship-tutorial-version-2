@@ -18,7 +18,7 @@ function Introduction() {
             
                 However, after all those versions and rule changes, the game is still simple enough to be played with only graph paper and pens. In this tutorial, we’ll teach you the rules for the classic board game and the old-school graph paper version. Stay safe out there on the open seas!
             </p>
-            <img src={battleshipgame} alt="Battlesip Game" className={styles.gameimage} />;
+            <img src={battleshipgame} alt="Battlesip Game" className={styles.gameimage} />
 
         </section>
         <section className={styles.container}>
