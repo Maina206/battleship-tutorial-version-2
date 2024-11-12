@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './Introduction.module.css'
-import battleshipgame from '../assets/images/battleshipgame.jpg'
-import Gamearrangement from '../assets/images/Gamearrangement.jpg'
+import React from "react";
+import styles from "./Introduction.module.css";
+import battleshipgame from "../assets/images/battleshipgame.jpg";
+import Gamearrangement from "../assets/images/Gamearrangement.jpg";
 function Introduction() {
   return (
     <div>
@@ -29,8 +29,6 @@ function Introduction() {
             <img src={Gamearrangement} alt='Game arrangement' className={styles.gameimage} />;
             </div>
         </section>
-    </div>
-  )
-}
-
-export default Introduction
+        </div>
+)}
+export default Introduction;
