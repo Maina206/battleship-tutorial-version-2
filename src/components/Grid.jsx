@@ -6,7 +6,6 @@ function Grid({ elementID, onCellClick, ships = {}, showShips = false, attackedC
   const cols = 10;
   const rowLabels = Array.from({ length: rows }, (_, i) => String.fromCharCode(65 + i)); // Generates labels A-J dynamically
 
-  // Helper function to check if a cell contains a ship
   const isShipPosition = (row, col) => {
     return Object.values(ships).some(ship =>
       ship.positions.some(position => position.row === row && position.col === col)

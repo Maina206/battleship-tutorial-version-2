@@ -16,7 +16,7 @@ import EndGame from "./components/EndGame";
 import HitAttackSimulation from "./components/HitAttackSimulation";
 
 function App() {
-  const { ships, placeShip} = UseShips();
+  const {placeShip} = UseShips();
 
   useEffect(() => {
     placeShip('Aircraft Carrier', 'D-3', 'horizontal');
