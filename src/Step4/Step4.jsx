@@ -3,7 +3,7 @@ import styles from "./Step4.module.css";
 function Step4() {
   return (
     <>
-      <div className={styles.container} >
+      <div className="container">
         <h3>Step 4: Decide which player goes first</h3>
         <p>
           If you and your opponent don't agree on who should go first right

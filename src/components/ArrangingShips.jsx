@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import BattleshipGrid from "./BattleshipGrid";
 import BattleshipPinGrid from "./BattleshipPinGrid";
 import "../assets/styles/arrangingships.css";
