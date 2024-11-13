@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+
 import Introduction from "./components/Introduction";
 import Grid from "./components/Grid";
 import UseShips from "./components/UseShips";
 import AttackSimulation from "./components/AttackSimulation";
+
 import Step2 from "./Step2/Step2";
 import Step4 from "./Step4/Step4";
 
 import HeaderComponent from "./Header/HeaderComponent";
 import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
+
 import EndGame from "./components/EndGame";
 
 function App() {
