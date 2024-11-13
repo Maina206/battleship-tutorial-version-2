@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import Introduction from "./components/Introduction";
-import Grid from "./components/Grid";
 import UseShips from "./components/UseShips";
 import AttackSimulation from "./components/AttackSimulation";
 
@@ -12,11 +11,13 @@ import Step4 from "./Step4/Step4";
 import HeaderComponent from "./Header/HeaderComponent";
 import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
+import Sink from "./Step5/SinkSimulation"
 
 import EndGame from "./components/EndGame";
+import HitAttackSimulation from "./components/HitAttackSimulation";
 
 function App() {
-  const { ships, placeShip} = UseShips();
+  const {placeShip} = UseShips();
 
   useEffect(() => {
     placeShip('Aircraft Carrier', 'D-3', 'horizontal');
@@ -30,11 +31,13 @@ function App() {
     <>
       <HeaderComponent />
       <Introduction />
-      <AttackSimulation />
       
       <Step2 />
       <ArrangingShips />
       <Step4 />
+      <HitAttackSimulation/>
+      <AttackSimulation />
+      <Sink/>
       <EndGame />
       <FooterComponent />
     </>

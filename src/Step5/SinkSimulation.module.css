@@ -1,0 +1,70 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(11, 40px);
+  grid-template-rows: repeat(11, 40px);
+  gap: 1px;
+  padding: 5px;
+}
+.cell {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid black;
+}
+.label {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+.ship {
+  background-color: #1e90ff;
+  color: white;
+  font-weight: bold;
+}
+.miss {
+  background-color: grey;
+  color: white;
+}
+.hit {
+  color: white;
+}
+.container {
+  max-width: 80%;
+  margin: 20px auto;
+  padding: 50px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #1e90ff;
+  background-color: #e8f4fd;
+  transition: box-shadow 0.3s;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* .gridWrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+} */
+
+/* .gridSection {
+  flex: 1;
+} */
+.players {
+  justify-content: space-between;
+  gap: 40px;
+  display: flex;
+  padding: 10px;
+  margin: 15px;
+}
+.sub-step {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px dashed #1e90ff;
+  border-radius: 10px;
+  background-color: #f1f9ff;
+}
