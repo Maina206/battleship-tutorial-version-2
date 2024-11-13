@@ -51,6 +51,11 @@ function AttackSimulation() {
   return (
     <div className={styles.container}>
       <h3>Attack Simulation (Miss Scenario)</h3>
+      <p> If you call out a coordinate that misses the other player’s ships, the opposing player calls out, “Miss!” You then put a white peg (grey in our case), on the corresponding coordinate on the targeting grid to mark where you’ve missed.
+
+For example, if you called out B2, which was a miss, place a white peg (grey in our case), on the B2 slot of the targeting grid. This marks the end of your turn.
+
+</p>
       <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
         <Grid
           elementID="player1"
