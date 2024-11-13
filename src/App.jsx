@@ -13,6 +13,7 @@ import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
 
 import EndGame from "./components/EndGame";
+import HitAttackSimulation from "./components/HitAttackSimulation";
 
 function App() {
   const {placeShip} = UseShips();
@@ -31,11 +32,12 @@ function App() {
       <h2>This is our Battleship project turned to react!</h2>
       <HeaderComponent />
       <Introduction />
-      <AttackSimulation />
       
       <Step2 />
       <ArrangingShips />
       <Step4 />
+      <HitAttackSimulation/>
+      <AttackSimulation />
       <EndGame />
       <FooterComponent />
     </>
