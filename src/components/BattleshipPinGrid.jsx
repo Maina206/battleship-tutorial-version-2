@@ -1,51 +1,49 @@
-import React, { useEffect, useMemo } from "react";
+import React from "react";
 
 const BattleshipPinGrid = ({ gridId }) => {
-  const rowLabels = useMemo(
-    () => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
-    []
-  );
+  const rowLabels = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
   const rows = 10;
   const cols = 10;
 
-  const createPinGrid = useMemo(() => {
-    return (gridElementId) => {
-      const gridContainer = document.getElementById(gridElementId);
-      gridContainer.innerHTML = "";
+  // Create array for column headers (1-10)
+  const colLabels = Array.from({ length: cols }, (_, i) => i + 1);
 
-      const emptyCell = document.createElement("div");
-      emptyCell.className = "cell label";
-      gridContainer.appendChild(emptyCell);
+  // Create all cells in a single array
+  const gridCells = [
+    // Empty cell in top-left corner
+    <div key="empty" className="cell label" />,
 
-      for (let col = 1; col <= cols; col++) {
-        const colLabel = document.createElement("div");
-        colLabel.className = "cell label";
-        colLabel.textContent = col;
-        gridContainer.appendChild(colLabel);
-      }
+    // Column headers
+    ...colLabels.map((col) => (
+      <div key={`col-${col}`} className="cell label">
+        {col}
+      </div>
+    )),
 
-      for (let row = 0; row < rows; row++) {
-        const rowLabel = document.createElement("div");
-        rowLabel.className = "cell label";
-        rowLabel.textContent = rowLabels[row];
-        gridContainer.appendChild(rowLabel);
+    // Grid rows with row labels and cells
+    ...rowLabels.flatMap((rowLabel) => [
+      // Row label
+      <div key={`row-${rowLabel}`} className="cell label">
+        {rowLabel}
+      </div>,
+      // Grid cells for this row
+      ...colLabels.map((col) => (
+        <div
+          key={`${rowLabel}-${col}`}
+          className="cell "
+          data-coordinate={`${rowLabel}-${col}`}
+        >
+          {`${rowLabel}-${col}`}
+        </div>
+      )),
+    ]),
+  ];
 
-        for (let col = 1; col <= cols; col++) {
-          const cell = document.createElement("div");
-          cell.className = "cell";
-          cell.setAttribute("data-coordinate", `${rowLabels[row]}-${col}`);
-          cell.textContent = `${rowLabels[row]}-${col}`;
-          gridContainer.appendChild(cell);
-        }
-      }
-    };
-  }, [cols, rowLabels]);
-
-  useEffect(() => {
-    createPinGrid(gridId);
-  }, [createPinGrid, gridId]);
-
-  return <div id={gridId} className="grid"></div>;
+  return (
+    <div id={gridId} className="grid">
+      {gridCells}
+    </div>
+  );
 };
 
 export default BattleshipPinGrid;
