@@ -57,6 +57,7 @@ For example, if you called out B2, which was a miss, place a white peg (grey in 
 
 </p>
       <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
+        
         <Grid
           elementID="player1"
           onCellClick={() => {}}
@@ -64,7 +65,7 @@ For example, if you called out B2, which was a miss, place a white peg (grey in 
           showShips={true} 
           attackedCells={attackedCells} 
         />
-
+        
         <Grid
           elementID="player2"
           onCellClick={() => {}}
