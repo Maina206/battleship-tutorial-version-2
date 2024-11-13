@@ -10,12 +10,6 @@ body {
     padding: 0;
 }
 
-header {
-    background-color: #1e90ff;
-    padding: 20px;
-    text-align: center;
-}
-
 p {
     line-height: 1.6; 
     word-spacing: 0.2rem;

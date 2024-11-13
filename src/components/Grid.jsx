@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 import React from 'react';
 import styles from './Grid.module.css';
 
@@ -21,28 +13,29 @@ function Grid({ elementID, onCellClick, ships = {}, showShips = false, attackedC
     );
   };
 
-const isAttacked = (row, col) => attackedCells.some(cell => cell.row === row && cell.col ===col);
+    const isAttacked = (row, col) => attackedCells.some(cell => cell.row === row && cell.col ===col);
+
   return (
     <div id={elementID} className={styles.grid}>
-      <div className={${styles.cell} ${styles.label}} />
-      {Array.from({ length: cols }, (, col) => (
-        <div key={col-${col}} className={${styles.cell} ${styles.label}}>{col + 1}</div>
+      <div className={`${styles.cell} ${styles.label}`} />
+      {Array.from({ length: cols }, (_, col) => (
+        <div key={`col-${col}`} className={`${styles.cell} ${styles.label}`}>{col + 1}</div>
       ))}
       {rowLabels.map((rowLabel, rowIdx) => (
         <React.Fragment key={rowLabel}>
-          <div className={${styles.cell} ${styles.label}}>{rowLabel}</div>
-          {Array.from({ length: cols }, (, col) => {
+          <div className={`${styles.cell} ${styles.label}`}>{rowLabel}</div>
+          {Array.from({ length: cols }, (_, col) => {
             const isShip = showShips && isShipPosition(rowIdx, col + 1);
             const attacked = isAttacked(rowIdx, col + 1);
             const cellClass = attacked ? (isShip ? styles.hit : styles.miss) : '';
             return (
               <div
-                key={${rowIdx}-${col}}
-                className={${styles.cell} ${cellClass}}
-                data-coordinate={${rowLabel}-${col + 1}}
+                key={`${rowIdx}-${col}`}
+                className={`${styles.cell} ${cellClass}`}
+                data-coordinate={`${rowLabel}-${col + 1}`}
                 onClick={() => onCellClick(rowIdx, col)}
               >
-                {isShip && showShips ? ":ship:" : ""}
+                {isShip && showShips ? "🚢" : ""}
                 {attacked && !isShip ? "M" : ""}
               </div>
             );
@@ -54,3 +47,5 @@ const isAttacked = (row, col) => attackedCells.some(cell => cell.row === row && 
 }
 
 export default Grid;
+
+
