@@ -6,6 +6,10 @@ A React-based implementation of the classic Battleship board game, featuring int
 
 This project is a modern web implementation of the classic Battleship game, built with React. It features a complete gameplay experience including ship placement, attack mechanics, and game state management, with an emphasis on educational value through step-by-step demonstrations of game mechanics.
 
+## Project Link
+
+Live project link: https://67350d18099c7849d7725afd--battleshiptutorial.netlify.app/#step3
+
 ## ✨ Features
 
 - Complete game board visualization
