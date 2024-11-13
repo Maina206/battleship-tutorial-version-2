@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-
+import HitAttackSimulation from "./components/HitAttackSimulation";
 import Introduction from "./components/Introduction";
 import Grid from "./components/Grid";
 import UseShips from "./components/UseShips";
 import AttackSimulation from "./components/AttackSimulation";
+
 import Step2 from "./Step2/Step2";
 import Step4 from "./Step4/Step4";
 
 import HeaderComponent from "./Header/HeaderComponent";
 import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
+
 import EndGame from "./components/EndGame";
 
 function App() {
@@ -30,11 +32,14 @@ function App() {
       <h2>This is our Battleship project turned to react!</h2>
       <HeaderComponent />
       <Introduction />
-      <AttackSimulation />
-      
+    
       <Step2 />
       <ArrangingShips />
       <Step4 />
+      <HitAttackSimulation/>
+
+      <AttackSimulation />
+      
       <EndGame />
       <FooterComponent />
     </>
