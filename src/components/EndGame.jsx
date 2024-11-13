@@ -159,23 +159,23 @@ const EndGame = () => {
 
     const getCellStyle = (row, col) => {
       const cellState = board[row][col];
-      const baseStyle = "cell text-center border border-gray-300 p-2";
-      if (cellState === "hit") return `${baseStyle} bg-red-500 text-white`;
-      if (cellState === "miss") return `${baseStyle} bg-gray-500 text-white`;
+      const baseStyle = "cell";
+      if (cellState === "hit") return `${baseStyle}`;
+      if (cellState === "miss") return `${baseStyle}`;
       return baseStyle;
     };
 
     return (
       <div className="grid">
-        <div className="cell" />
+        <div className="cell label" />
         {[...Array(10)].map((_, i) => (
-          <div key={`col-${i}`} className="cell">
+          <div key={`col-${i}`} className="cell label">
             {i + 1}
           </div>
         ))}
         {rowLabels.map((rowLabel, rowIndex) => (
           <React.Fragment key={`row-${rowLabel}`}>
-            <div className="cell">{rowLabel}</div>
+            <div className="cell label">{rowLabel}</div>
             {[...Array(10)].map((_, colIndex) => (
               <div
                 key={`${rowLabel}-${colIndex}`}
