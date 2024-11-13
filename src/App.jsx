@@ -11,6 +11,7 @@ import Step4 from "./Step4/Step4";
 import HeaderComponent from "./Header/HeaderComponent";
 import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
+import Sink from "./Step5/SinkSimulation"
 
 import EndGame from "./components/EndGame";
 import HitAttackSimulation from "./components/HitAttackSimulation";
@@ -38,6 +39,7 @@ function App() {
       <Step4 />
       <HitAttackSimulation/>
       <AttackSimulation />
+      <Sink/>
       <EndGame />
       <FooterComponent />
     </>
