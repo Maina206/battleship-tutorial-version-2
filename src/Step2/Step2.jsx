@@ -3,7 +3,7 @@ import styles from "./Step2.module.css";
 function Step2() {
   return (
     <>
-      <div className="container">
+      <div className="container" id="step2">
         <h3>Step 2: Ensure you have all the ships</h3>
         <p>
           In Battleship, ships come in various lengths, taking up a different

@@ -5,7 +5,7 @@ import Gamearrangement from "../assets/images/Gamearrangement.jpg";
 function Introduction() {
   return (
     <div>
-      <section className={styles.container}>
+      <section className={styles.container} id="introduction">
         <hr className={styles.horizontalLine} />
         <p>
           <strong>OBJECTIVE: </strong> Sink all five of your opponents’ ships
@@ -38,7 +38,7 @@ function Introduction() {
           className={styles.gameimage}
         />
       </section>
-      <section className={styles.container}>
+      <section className={styles.container} id="step1">
         <h2>Step-by-Step Process to Play</h2>
         <div className={styles.step}>
           <h3>Step 1: Players sit opposite each other</h3>
