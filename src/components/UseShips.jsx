@@ -9,7 +9,10 @@ const initialShips = {
 };
 
 function useShips() {
+
+  
   const [ships, setShips] = useState(initialShips);
+  
 
   const placeShip = (shipName, startCoordinate, orientation) => {
     const [startRow, startCol] = convertCoordinate(startCoordinate);
