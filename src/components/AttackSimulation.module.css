@@ -1,0 +1,32 @@
+/* Grid.module.css */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(11, 40px);
+    grid-template-rows: repeat(11, 40px);
+    gap: 1px;
+    padding: 5px;
+  }
+  .cell {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid black;
+  }
+  .label {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  .ship {
+    background-color: #1e90ff; /* Ship color */
+    color: white;
+    font-weight: bold;
+  }
+  .miss {
+    background-color: grey;
+    color: white;
+  }
+  .hit {
+    background-color: red;
+    color: white;
+  }
