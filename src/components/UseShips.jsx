@@ -40,9 +40,7 @@ function UseShips() {
   return { ships, placeShip };
 }
 
-export default UseShips;
 
-import { useState } from 'react';
 
 const initialShips = {
   'Aircraft Carrier': { length: 5, positions: [{ row: 0, col: 1 }, { row: 0, col: 2 }, { row: 0, col: 3 }, { row: 0, col: 4 }, { row: 0, col: 5 }] },
