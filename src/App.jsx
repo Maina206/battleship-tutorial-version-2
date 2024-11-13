@@ -12,6 +12,7 @@ import Step4 from "./Step4/Step4";
 import HeaderComponent from "./Header/HeaderComponent";
 import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
+import Sink from "./Step5/SinkSimulation"
 
 import EndGame from "./components/EndGame";
 
@@ -41,6 +42,7 @@ function App() {
       <Step2 />
       <ArrangingShips />
       <Step4 />
+      <Sink/>
       <EndGame />
       <FooterComponent />
     </>
