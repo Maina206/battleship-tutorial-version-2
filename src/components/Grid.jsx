@@ -36,7 +36,7 @@ function Grid({ elementID, onCellClick, ships = {}, showShips = false, attackedC
                 onClick={() => onCellClick(rowIdx, col)}
               >
                 {isShip && showShips ? "🚢" : ""}
-                {attacked && !isShip ? "M" : ""}
+                {attacked && !isShip ? "📌" : ""}
               </div>
             );
           })}

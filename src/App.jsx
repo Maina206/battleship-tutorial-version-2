@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 import Introduction from "./components/Introduction";
-import Grid from "./components/Grid";
 import UseShips from "./components/UseShips";
 import AttackSimulation from "./components/AttackSimulation";
 
@@ -14,6 +13,7 @@ import FooterComponent from "./Footer/FooterComponent";
 import ArrangingShips from "./components/ArrangingShips";
 
 import EndGame from "./components/EndGame";
+import HitAttackSimulation from "./components/HitAttackSimulation";
 
 function App() {
   const { ships, placeShip} = UseShips();
@@ -32,11 +32,12 @@ function App() {
       <h2>This is our Battleship project turned to react!</h2>
       <HeaderComponent />
       <Introduction />
-      <AttackSimulation />
       
       <Step2 />
       <ArrangingShips />
       <Step4 />
+      <HitAttackSimulation/>
+      <AttackSimulation />
       <EndGame />
       <FooterComponent />
     </>
