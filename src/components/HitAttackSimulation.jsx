@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import UseShips from './UseShips';
 import Grid from './Grid';
-import styles from './AttackSimulation.module.css';
+import  './AttackSimulation.module.css';
+import '../assets/styles/hitattacksimulation.css'
 
 function HitAttackSimulation() {
   const { ships } = UseShips(); // Load ships for Player 1's grid
@@ -46,19 +47,24 @@ function HitAttackSimulation() {
     const initialAttackTimeout = setTimeout(() => {
       initiateHitAttack(); // Start the first hit attack
       // Start a continuous attack every 3 seconds after the first one
-      const attackInterval = setInterval(initiateHitAttack, 3000);
+      const attackInterval = setInterval(initiateHitAttack, 1000);
 
       // Clear the interval when the component unmounts
       return () => clearInterval(attackInterval);
-    }, 5000);
+    }, 2000);
 
     // Clear the initial timeout if the component unmounts
     return () => clearTimeout(initialAttackTimeout);
   }, [attackedCells, ships]);
 
   return (
-    <div className={styles.container}>
+    <div className="container" id='step5'>
       <h3>Attack Simulation (Hit Scenario)</h3>
+      <p>In the hit scenario, players take turns attempting to strike their opponent's ships. When a player selects a coordinate to attack, the game checks if there is a ship located at that coordinate. 
+                                        If there is a ship present, the attack is considered a hit, and the corresponding part of the ship is marked. 
+                                        A visual indication (such as a red color) shows that the attack was successful. 
+                                        Conversely, if no ship is present, the attack is marked as a miss (typically shown in gray). 
+                                        The game continues until all of one player's ships are sunk, declaring the other player as the winner. Below this explanation there are two grids one for "player 1's battleship grid board "and the other for "player 2's battleship pin board", Below is a simulation that shows a hit scenario;</p>
       <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
         {/* Player 1 Grid with Ships */}
         <Grid
