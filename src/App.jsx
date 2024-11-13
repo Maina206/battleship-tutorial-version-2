@@ -25,16 +25,12 @@ function App() {
     placeShip('Submarine', 'J-3', 'horizontal');
     placeShip('Destroyer', 'B-7', 'horizontal');
   }, [placeShip]
-);
+)
   return (
     <>
       <HeaderComponent />
       <Introduction />
-      <div style={{ display: 'flex', justifyContent: 'space-around', marginTop: '20px' }}>
-        <Grid elementID="player1" onCellClick={() => console.log('Player 1 Grid Clicked')} />
-        <Grid elementID="player2" onCellClick={() => console.log('Player 2 Grid Clicked')} ships={ships} showShips={true} />
-          <AttackSimulation />
-      </div>
+      <AttackSimulation />
       
       <Step2 />
       <ArrangingShips />

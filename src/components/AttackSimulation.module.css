@@ -1,5 +1,4 @@
-/* Grid.module.css */
-.grid {
+ .grid {
     display: grid;
     grid-template-columns: repeat(11, 40px);
     grid-template-rows: repeat(11, 40px);
@@ -18,7 +17,7 @@
     font-weight: bold;
   }
   .ship {
-    background-color: #1e90ff; /* Ship color */
+    background-color: #1e90ff; 
     color: white;
     font-weight: bold;
   }
@@ -29,4 +28,15 @@
   .hit {
     background-color: red;
     color: white;
+  }
+  .container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 50px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border: 1px solid #1e90ff;
+    background-color: #e8f4fd;
+    transition: box-shadow 0.3s;
   }
