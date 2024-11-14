@@ -53,6 +53,7 @@ const EndGame = () => {
       }
     }
 
+    // update the gameState to keep track of the number of ships placed.
     setGameState((prev) => ({
       ...prev,
       gameBoard: newBoard,
@@ -81,10 +82,12 @@ const EndGame = () => {
       return null;
     }
 
+    //we update the states after placing our ships
     const isHit = gameState.gameBoard[row][col] === "ship";
     const newGameBoard = [...gameState.gameBoard];
     const newPinBoard = [...gameState.pinBoard];
 
+    //Let's check if it's a hit or miss
     newGameBoard[row][col] = isHit ? "hit" : "miss";
     newPinBoard[row][col] = isHit ? "hit" : "miss";
 
@@ -133,6 +136,7 @@ const EndGame = () => {
               };
             }
 
+            //We clear the board once all ships have been attacked.
             return {
               ...prev,
               gameBoard: newGameBoard,
