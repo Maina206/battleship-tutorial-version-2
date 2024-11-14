@@ -14,6 +14,7 @@ const BattleshipGrid = ({ gridId }) => {
     { letter: "A", number: 2, size: 2, direction: "right" },
   ];
 
+  //We go through each in shipPlacements and figure out the square it covers and whether it's aligned horizontally or vertically. When we figure out the cells covered by a ship and it's orientation we update the setShipLocations with this information.
   useEffect(() => {
     let newShipLocations = [];
 
@@ -38,6 +39,7 @@ const BattleshipGrid = ({ gridId }) => {
     setShipLocations(newShipLocations);
   }, []);
 
+  //primarily checks if a specific dqure on the board has a ship part by going through the shipLocations array
   const hasShip = (letter, number) => {
     return shipLocations.some(
       (pos) => pos.letter === letter && pos.number === number
@@ -47,8 +49,10 @@ const BattleshipGrid = ({ gridId }) => {
   const makeGrid = () => {
     const allSquares = [];
 
+    //here we add an empty corner square
     allSquares.push(<div key="corner" className="cell label" />);
 
+    //next we add labels for the numbers across the top as in the top 1 to 10 axis
     numbers.forEach((num) => {
       allSquares.push(
         <div key={`top-${num}`} className="cell label">
@@ -57,6 +61,7 @@ const BattleshipGrid = ({ gridId }) => {
       );
     });
 
+    //now for each row, we add a letter as in the letter axis A to J
     letters.forEach((letter) => {
       allSquares.push(
         <div key={`row-${letter}`} className="cell label">
@@ -64,6 +69,7 @@ const BattleshipGrid = ({ gridId }) => {
         </div>
       );
 
+      //we add squares across the rows labeled 1 to 10
       numbers.forEach((num) => {
         const hasShipHere = hasShip(letter, num);
         allSquares.push(
