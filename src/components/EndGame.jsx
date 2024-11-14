@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 
+//we keep track of everything happening in the game
 const EndGame = () => {
   const [gameState, setGameState] = useState({
-    shipsPlaced: 0,
-    attacks: [],
-    isPlacingShips: true,
-    gameOver: false,
-    gameBoard: Array(10)
+    shipsPlaced: 0, //tells us how many ships have been placed
+    attacks: [], //records our hits and misses
+    isPlacingShips: true, //says whether a ship are being placed
+    gameOver: false, // tracks whether all ships are sun
+    gameBoard: Array(10) //creates a 10X10 game board
       .fill(null)
       .map(() => Array(10).fill(null)),
-    pinBoard: Array(10)
+    pinBoard: Array(10) // creates a 10X10 pin grid board
       .fill(null)
       .map(() => Array(10).fill(null)),
   });
@@ -36,7 +37,7 @@ const EndGame = () => {
     return [row, col];
   };
 
-  // Place a ship on the board
+  // Place a ship on the board based on its starting coordinates and orientation
   const placeShip = (ship) => {
     const [startRow, startCol] = convertCoordinate(ship.start);
     const newBoard = [...gameState.gameBoard];
@@ -60,7 +61,7 @@ const EndGame = () => {
     }));
   };
 
-  // Place ships automatically with delay
+  // Place ships automatically with delay 1 second delay
   useEffect(() => {
     if (gameState.isPlacingShips && gameState.shipsPlaced < ships.length) {
       const timer = setTimeout(() => {
@@ -70,12 +71,12 @@ const EndGame = () => {
     }
   }, [gameState.isPlacingShips, gameState.shipsPlaced]);
 
-  // Perform attack
+  // Perform random attack
   const performAttack = () => {
     const row = Math.floor(Math.random() * 10);
     const col = Math.floor(Math.random() * 10);
 
-    // Check if cell was already attacked
+    // Check if cell was already attacked if yes, we skip this turn
     if (gameState.pinBoard[row][col] !== null) {
       return null;
     }
@@ -90,7 +91,7 @@ const EndGame = () => {
     return { row, col, isHit, newGameBoard, newPinBoard };
   };
 
-  // Simulate attacks
+  // Simulate automatic attacks - if we have a hit then we check if all ships are sunk, and if so, the game is over and the board resets itself
   useEffect(() => {
     if (!gameState.isPlacingShips && !gameState.gameOver) {
       const attackInterval = setInterval(() => {
@@ -146,6 +147,7 @@ const EndGame = () => {
     }
   }, [gameState.isPlacingShips, gameState.gameOver]);
 
+  //renders our 10X10 boards, we use the isPinGrid to decide if we render a ship board or a pin board. We also update the what we display on the cell depending on the cell state
   const Grid = ({ isPinGrid }) => {
     const board = isPinGrid ? gameState.pinBoard : gameState.gameBoard;
 
@@ -167,12 +169,14 @@ const EndGame = () => {
 
     return (
       <div className="grid">
+        {/* Let's create the top left cell first, */}
         <div className="cell label" />
         {[...Array(10)].map((_, i) => (
           <div key={`col-${i}`} className="cell label">
             {i + 1}
           </div>
         ))}
+        {/* Loops through each letter the y-axis in our rowLabels and add a new row to the grid */}
         {rowLabels.map((rowLabel, rowIndex) => (
           <React.Fragment key={`row-${rowLabel}`}>
             <div className="cell label">{rowLabel}</div>
